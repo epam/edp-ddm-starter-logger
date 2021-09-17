@@ -45,6 +45,11 @@
     "$resolver": "message",
     "stringified": true
   },
+  "X-Primary-Request-URL": {
+    "$resolver": "mdc",
+    "key": "X-Primary-Request-URL",
+    "stringified": true
+  },
   "exception": {
     "type": {
       "$resolver": "exception",

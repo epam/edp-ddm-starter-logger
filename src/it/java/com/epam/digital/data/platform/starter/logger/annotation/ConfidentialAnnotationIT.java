@@ -6,7 +6,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.powermock.api.mockito.PowerMockito.mockStatic;
 
-import com.epam.digital.data.platform.starter.logger.LoggingAutoConfiguration;
+import com.epam.digital.data.platform.starter.logger.AspectBasedLoggingAutoConfiguration;
 import com.epam.digital.data.platform.starter.logger.aspect.AbstractLogger;
 import com.epam.digital.data.platform.starter.logger.aspect.LoggerAspect;
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @PowerMockRunnerDelegate(SpringRunner.class)
 @PowerMockIgnore({"javax.management.*", "javax.script.*"})
 @PrepareForTest({LoggerAspect.class, LoggerFactory.class})
-@ContextConfiguration(classes = LoggingAutoConfiguration.class,
+@ContextConfiguration(classes = AspectBasedLoggingAutoConfiguration.class,
     initializers = ConfigFileApplicationContextInitializer.class)
 public class ConfidentialAnnotationIT {
 
