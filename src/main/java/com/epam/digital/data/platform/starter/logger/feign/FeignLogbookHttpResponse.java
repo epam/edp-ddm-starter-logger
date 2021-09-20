@@ -40,7 +40,7 @@ public class FeignLogbookHttpResponse extends BaseFeignLogbookHttpEntity impleme
   @Override
   public HttpResponse withBody() throws IOException {
     this.withBody = true;
-    if (Objects.isNull(this.responseBody)) {
+    if (Objects.isNull(this.responseBody) && Objects.nonNull(this.response.body())) {
       this.responseBody = this.response.body().asInputStream().readAllBytes();
       this.response = this.response.toBuilder().body(responseBody).build();
     }
