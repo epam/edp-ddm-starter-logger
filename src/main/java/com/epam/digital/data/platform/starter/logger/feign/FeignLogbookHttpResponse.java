@@ -15,7 +15,7 @@ public class FeignLogbookHttpResponse extends BaseFeignLogbookHttpEntity impleme
   @Getter
   private Response response;
   private boolean withBody = false;
-  private byte[] responseBody;
+  private byte[] responseBody = new byte[0];
 
   private FeignLogbookHttpResponse(Response response) {
     super(response.headers());
