@@ -50,6 +50,11 @@
     "key": "X-Primary-Request-URL",
     "stringified": true
   },
+  "responseCode": {
+    "$resolver": "mdc",
+    "key": "responseCode",
+    "stringified": true
+  },
   "exception": {
     "type": {
       "$resolver": "exception",
