@@ -3,6 +3,7 @@ package com.epam.digital.data.platform.starter.logger;
 import com.epam.digital.data.platform.starter.logger.feign.LogbookFeignClient;
 import com.epam.digital.data.platform.starter.logger.logbook.InfoHttpLogWriter;
 import com.epam.digital.data.platform.starter.logger.logbook.RequestBodyOnDebugStrategy;
+import com.epam.digital.data.platform.starter.logger.logbook.WithoutBodyStrategyImpl;
 import feign.Client;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
@@ -26,6 +27,12 @@ public class LogbookInfoLoggingAutoConfiguration {
   @ConditionalOnProperty(prefix = "logbook", name = "strategy", havingValue = "request-body-on-debug")
   public Strategy strategy() {
     return new RequestBodyOnDebugStrategy();
+  }
+
+  @Bean
+  @ConditionalOnProperty(prefix = "logbook", name = "strategy", havingValue = "without-body")
+  public Strategy withoutBodyStrategy() {
+    return new WithoutBodyStrategyImpl();
   }
 
   @Bean

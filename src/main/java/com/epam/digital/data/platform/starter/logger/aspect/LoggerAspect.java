@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
+@Deprecated
 public class LoggerAspect extends AbstractLogger {
 
   @Around("@within(com.epam.digital.data.platform.starter.logger.annotation.Logging) &&"

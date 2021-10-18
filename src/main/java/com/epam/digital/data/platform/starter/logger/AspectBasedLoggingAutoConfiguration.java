@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Import;
 @Import(RequestLoggingFilterConfiguration.class)
 @ComponentScan(basePackageClasses = LoggerAspect.class)
 @ConditionalOnProperty(prefix = "platform.logging.aspect", name = "enabled", matchIfMissing = true)
+@Deprecated
 public class AspectBasedLoggingAutoConfiguration {
 
 }

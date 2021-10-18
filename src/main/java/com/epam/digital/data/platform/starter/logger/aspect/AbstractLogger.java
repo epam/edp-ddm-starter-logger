@@ -11,6 +11,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 
 @Slf4j
+@Deprecated
 public abstract class AbstractLogger {
 
   protected Object logJoinPoint(ProceedingJoinPoint joinPoint) throws Throwable {
@@ -28,13 +29,11 @@ public abstract class AbstractLogger {
     final var arguments = joinPoint.getArgs();
     final var checkedArguments = getCheckedArguments(method, arguments);
     log.info("{} invoke {} with args {}", className, methodName, checkedArguments);
-    log.debug("All arguments (confidential arguments will be shown): {}", arguments);
   }
 
   private void logResult(Object proceed, Method method) {
     if (isConfidentialElement(method)) {
       log.info("Invoked result confidential information");
-      log.debug("Confidential result: {}", proceed);
     } else {
       log.info("Invoked result {}", proceed);
     }

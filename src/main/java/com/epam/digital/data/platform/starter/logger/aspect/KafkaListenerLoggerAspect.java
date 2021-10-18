@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 @ConditionalOnClass(name = "org.springframework.kafka.annotation.KafkaListener")
+@Deprecated
 public class KafkaListenerLoggerAspect extends AbstractLogger {
 
   @Around("@annotation(org.springframework.kafka.annotation.KafkaListener)")

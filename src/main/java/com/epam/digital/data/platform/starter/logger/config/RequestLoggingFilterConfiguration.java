@@ -13,6 +13,7 @@ import org.springframework.web.filter.CommonsRequestLoggingFilter;
  * debug.
  */
 @Configuration
+@Deprecated
 public class RequestLoggingFilterConfiguration {
 
   @ConditionalOnProperty(name = "logging.level.org.springframework.web.filter.CommonsRequestLoggingFilter", havingValue = "DEBUG")
