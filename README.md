@@ -65,5 +65,5 @@ logging.level.org.springframework.web.filter.CommonsRequestLoggingFilter=DEBUG
   
 ### License
 
-The ddm-starter-logger is released under version 2.0 of
-the [Apache License](https://www.apache.org/licenses/LICENSE-2.0).
+The ddm-starter-logger is Open Source software released under
+the [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0).
