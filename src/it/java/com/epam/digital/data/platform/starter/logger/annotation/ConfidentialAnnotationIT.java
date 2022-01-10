@@ -37,7 +37,6 @@ import org.powermock.modules.junit4.PowerMockRunnerDelegate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.aspectj.annotation.AspectJProxyFactory;
-import org.springframework.boot.test.context.ConfigFileApplicationContextInitializer;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -45,8 +44,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @PowerMockRunnerDelegate(SpringRunner.class)
 @PowerMockIgnore({"javax.management.*", "javax.script.*"})
 @PrepareForTest({LoggerAspect.class, LoggerFactory.class})
-@ContextConfiguration(classes = AspectBasedLoggingAutoConfiguration.class,
-    initializers = ConfigFileApplicationContextInitializer.class)
+@ContextConfiguration(classes = AspectBasedLoggingAutoConfiguration.class)
 public class ConfidentialAnnotationIT {
 
   private static Logger loggerMock;
