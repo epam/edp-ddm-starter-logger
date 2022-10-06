@@ -18,6 +18,7 @@
     <spring.cloud.version>2021.0.0</spring.cloud.version>
     <log4j.json.template.version>2.14.1</log4j.json.template.version>
     <logbook-spring-boot-starter.version>2.12.0</logbook-spring-boot-starter.version>
+    <jackson-databind.version>2.13.4</jackson-databind.version>
 
     <junit-jupiter.version>5.6.2</junit-jupiter.version>
     <powermock-api-mockito2.version>2.0.0-beta.5</powermock-api-mockito2.version>
@@ -67,6 +68,11 @@
         <groupId>org.apache.logging.log4j</groupId>
         <artifactId>log4j-slf4j-impl</artifactId>
         <version>${log4j.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson-databind.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
